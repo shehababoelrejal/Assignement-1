@@ -34,7 +34,7 @@ if(isset($_POST['edit']))
 	"' , username ='" . $_POST["username"] . 
     "' , password ='" . $_POST["Password"] . 
     "' , dob ='" . $_POST["DOB"] . 
-    "'   WHERE username = '" . $_POST["username"] . "'";
+    "'   WHERE username = '" . $_SESSION["username"] . "'";
     $result = mysqli_query($conn, $sql);
     if($result)
     {
