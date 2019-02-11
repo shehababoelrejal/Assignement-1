@@ -43,30 +43,5 @@ if(isset($_POST['submit'])){ // check if form was submitted
         echo "Invalid Email or Password";
     }
 }
-
-if(isset($_POST['edit']))
-{ 
-    // check if form was submitted
-    $sql = "update user set firstName = '" . $_POST["FirstName"] . 
-	"' , lastName ='" . $_POST["LastName"] .  
-	"' , username ='" . $_POST["username"] . 
-    "' , password ='" . $_POST["Password"] . 
-    "' , dob ='" . $_POST["DOB"] . 
-    "'   WHERE username = '" . $_POST["username"] . "'";
-    $result = mysqli_query($conn, $sql);
-    if($result)
-    {
-        $_SESSION["FName"] = $_POST["FirstName"];
-        $_SESSION["LName"] = $_POST["LastName"];
-        $_SESSION["username"] = $_POST["username"];
-        $_SESSION["Password"] = $_POST["Password"];
-        $_SESSION["DOB"] = $_POST["DOB"];
-        header("Location:Login.php");
-    }
-    else
-    {
-        return $sql;
-    }
-}
 ?>
 </html>
